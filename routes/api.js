@@ -1,42 +1,46 @@
-const express = require("express")
-const router = express.Router()
-const BlogPost = require("../models/blogPost")
+const router = require("express").Router()
+let Survey = require("../models/survey")
 
-//Routes
-//changed app to router
-router.get("/", (req, res) => {
-  BlogPost.find({})
-    .then((data) => {
-      console.log(data)
-      res.json(data)
+router.route("/").get((req, res) => {
+  Survey.find()
+    .then(surveys => res.json(surveys))
+    .catch(err => res.status(400).json("Error: " + err))
+})
+
+router.route("/:id").get((req, res) => {
+  Survey.findById(req.params.id)
+    .then(survey => res.json(survey))
+    .catch(err => res.status(400).json("Error: " + err))
+})
+
+router.route("/add").post((req, res) => {
+  const name = req.body.name
+  const description = req.body.description
+  const items = req.body.items
+  const newSurvey = new Survey({name, description, items})
+
+  newSurvey.save()
+    .then(() => res.json("Survey added!"))
+    .catch(err => res.status(400).json("Error: " + err))
+})
+
+router.route("/update/:id").post((req, res) => {
+  Survey.findById(req.params.id)
+    .then(survey => {
+      survey.name = req.body.name
+      survey.description = req.body.description
+
+      survey.save()
+        .then(() => res.json("Survey updated!"))
+        .catch(err => res.status(400).json("Error: " + err))
     })
-    .catch((err) => {
-      console.log(err)
-    })  
+    .catch(err => res.status(400).json("Error: " + err))
 })
 
-router.post('/save', (req, res) => {
-  const data = req.body;
-
-  const newBlogPost = new BlogPost(data);
-
-  newBlogPost.save((error) => {
-      if (error) {
-          res.status(500).json({ msg: 'Sorry, internal server errors' });
-          return;
-      }
-      // BlogPost
-      return res.json({
-          msg: 'Your data has been saved!!!!!!'
-      });
-  });
-});
-
-router.get("/name", (req, res) => {
-  const data = {
-    username: "peterson",
-    age: 5
-  }
-  res.json(data)
+router.route("/:id").delete((req, res) => {
+  Survey.findByIdAndDelete(req.params.id)
+    .then(() => res.json("Survey deleted."))
+    .catch(err => res.status(400).json("Error: " + err))
 })
+
 module.exports = router

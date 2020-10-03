@@ -20,14 +20,11 @@ app.use(express.urlencoded({extended: false})) //parse every url, set to true if
 
 
 app.use(morgan("tiny"))
-app.use("/api", routes)
+app.use("/surveys", routes)
 
 //production = running on Heroku
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"))
 }
-
-
-
 
 app.listen(PORT, console.log(`Server is starting at ${PORT}`))
