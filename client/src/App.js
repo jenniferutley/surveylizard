@@ -4,7 +4,7 @@ import Nav from './components/Nav'
 import Hero from './components/Hero'
 import Create from './components/Create'
 import View from './components/View'
-import Build from './components/Build'
+import Take from './components/Take'
 import Edit from './components/Edit'
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
       <Route exact path={process.env.PUBLIC_URL + '/'} component={Hero} />
       <Route path={process.env.PUBLIC_URL + '/view'} component={View} />
       <Route path={process.env.PUBLIC_URL + '/create'} component={Create} />
-      <Route path={process.env.PUBLIC_URL + '/build'} component={Build} />
+      <Route path={process.env.PUBLIC_URL + '/take'} component={Take} />
       <Route path={process.env.PUBLIC_URL + '/edit'} component={Edit} />
     </BrowserRouter>
   );

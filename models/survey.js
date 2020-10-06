@@ -1,10 +1,15 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
-const itemSchema = new Schema({
-  type: { type: String, required: false },
+const answerSchema = new Schema({
   order: { type: Number, required: false },
   content: { type: String, required: false },
+})
+
+const itemSchema = new Schema({
+  order: { type: Number, required: false },
+  question: { type: String, required: false },
+  answers: [answerSchema],
 }, {
   timestamps: true,
 })
@@ -22,7 +27,11 @@ const surveySchema = new Schema({
     trim: true,
     minLength: 3
   },
-  items: [itemSchema]
+  radio: [itemSchema],
+  checkbox: [itemSchema],
+  text: [itemSchema],
+  textArea: [itemSchema],
+  likert: [itemSchema]
 }, {
   timestamps: true,
 })

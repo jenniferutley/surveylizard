@@ -16,8 +16,12 @@ router.route("/:id").get((req, res) => {
 router.route("/add").post((req, res) => {
   const name = req.body.name
   const description = req.body.description
-  const items = req.body.items
-  const newSurvey = new Survey({name, description, items})
+  const radio = req.body.radio
+  const checkbox = req.body.checkbox
+  const text = req.body.text
+  const textArea = req.body.textArea
+  const likert = req.body.likert
+  const newSurvey = new Survey({name, description, radio, checkbox, text, textArea, likert})
 
   newSurvey.save()
     .then(() => res.json("Survey added!"))
@@ -27,8 +31,9 @@ router.route("/add").post((req, res) => {
 router.route("/update/:id").post((req, res) => {
   Survey.findById(req.params.id)
     .then(survey => {
-      survey.name = req.body.name
-      survey.description = req.body.description
+      // survey.name = req.body.name
+      // survey.description = req.body.description
+      survey.radio = req.body.radio
 
       survey.save()
         .then(() => res.json("Survey updated!"))
