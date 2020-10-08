@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from "axios"
 
-export default function Create() {
+export default function CreateSurvey() {
   const [name, setName] = useState(null)
   const [description, setDescription] = useState(null)
    
@@ -11,8 +11,7 @@ export default function Create() {
 
   const handleDescriptionChange = (e) => {
     setDescription(e.target.value)
-  }
-  
+  }  
 
   const handleOnSubmit = (e) => {
     e.preventDefault()
@@ -26,11 +25,11 @@ export default function Create() {
       .catch((err) => {
         console.log(err)
       })
-    // window.location = "/view"
+    window.location = "/viewsurveys"
   }
 
   return (
-    <div className="Create">      
+    <div className="Create-Survey">      
       <h2>Create a new survey</h2>
       <br />
       <br />

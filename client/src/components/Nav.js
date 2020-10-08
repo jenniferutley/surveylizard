@@ -6,9 +6,9 @@ export default function Nav() {
     <div className="Nav">
       <nav>
         <Link to={process.env.PUBLIC_URL + '/'}>Home</Link>
-        <Link to={process.env.PUBLIC_URL + '/take'}>Take Survey</Link>
-        <Link to={process.env.PUBLIC_URL + '/view'}>View Surveys</Link>        
-        <Link to={process.env.PUBLIC_URL + '/create'}>Create Survey</Link>
+        <Link to={process.env.PUBLIC_URL + '/takesurvey'}>Take Survey</Link>
+        <Link to={process.env.PUBLIC_URL + '/viewsurveys'}>View Surveys</Link>        
+        <Link to={process.env.PUBLIC_URL + '/createsurvey'}>Create Survey</Link>
       </nav>
     </div>
   )

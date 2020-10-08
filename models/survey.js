@@ -9,7 +9,16 @@ const answerSchema = new Schema({
 const itemSchema = new Schema({
   order: { type: Number, required: false },
   question: { type: String, required: false },
-  answers: [answerSchema],
+  a1: [answerSchema],
+  a2: [answerSchema],
+  a3: [answerSchema],
+  a4: [answerSchema],
+  a5: [answerSchema],
+  a6: [answerSchema],
+  a7: [answerSchema],
+  a8: [answerSchema],
+  a9: [answerSchema],
+  a10: [answerSchema]
 }, {
   timestamps: true,
 })

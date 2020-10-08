@@ -28,12 +28,34 @@ router.route("/add").post((req, res) => {
     .catch(err => res.status(400).json("Error: " + err))
 })
 
-router.route("/update/:id").post((req, res) => {
+router.route("/update/radio/:id").post((req, res) => {
   Survey.findById(req.params.id)
     .then(survey => {
-      // survey.name = req.body.name
-      // survey.description = req.body.description
-      survey.radio = req.body.radio
+      survey.radio = [...survey.radio, req.body.radio]
+
+      survey.save()
+        .then(() => res.json("Survey updated!"))
+        .catch(err => res.status(400).json("Error: " + err))
+    })
+    .catch(err => res.status(400).json("Error: " + err))
+})
+
+router.route("/update/checkbox/:id").post((req, res) => {
+  Survey.findById(req.params.id)
+    .then(survey => {
+      survey.checkbox = [...survey.checkbox, req.body.checkbox]
+
+      survey.save()
+        .then(() => res.json("Survey updated!"))
+        .catch(err => res.status(400).json("Error: " + err))
+    })
+    .catch(err => res.status(400).json("Error: " + err))
+})
+
+router.route("/update/text/:id").post((req, res) => {
+  Survey.findById(req.params.id)
+    .then(survey => {
+      survey.text = [...survey.text, req.body.text]
 
       survey.save()
         .then(() => res.json("Survey updated!"))

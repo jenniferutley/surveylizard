@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <div className="Hero">
       <h1>survey lizard.</h1>
-      <Link to={process.env.PUBLIC_URL + '/create'}><button className="rounded center">Get Started</button></Link>
+      <Link to={process.env.PUBLIC_URL + '/createsurvey'}><button className="rounded center">Get Started</button></Link>
     </div>
   )
 }

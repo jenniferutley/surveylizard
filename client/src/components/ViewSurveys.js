@@ -3,13 +3,12 @@ import { Link } from "react-router-dom"
 import axios from "axios"
 import moment from 'moment'
 
-export default function View() {
+export default function ViewSurveys() {
   const [surveys, setSurveys] = useState([])
 
   useEffect(() => {
     axios.get("/surveys")
       .then(res => {
-        console.log(res.data)
         setSurveys(res.data)
       })
       .catch((err) => {
@@ -27,7 +26,7 @@ export default function View() {
   }
 
   return (
-    <div className="View">
+    <div className="View-Surveys">
       <h2>View Surveys</h2>
       <br />
       <br />
@@ -46,7 +45,8 @@ export default function View() {
             <td>{currentSurvey.description}</td>
             <td>{moment(currentSurvey.createdAt).format("L LTS")}</td>
             <td>{moment(currentSurvey.updatedAt).format("L LTS")}</td>
-            <td><Link to={process.env.PUBLIC_URL + '/edit/'+currentSurvey._id}><button>Edit</button></Link></td>
+            <td><Link to={process.env.PUBLIC_URL + '/previewsurvey/'+currentSurvey._id}><button>Preview</button></Link></td>
+            <td><Link to={process.env.PUBLIC_URL + '/editsurvey/'+currentSurvey._id}><button>Edit</button></Link></td>
             <td><button onClick={() => {handleDelete(currentSurvey._id)}}>Delete</button></td>            
           </tr>)}
         </tbody>

@@ -89,7 +89,7 @@ HERO PAGE
 CREATE PAGE
 --------------------------*/
 
-.Create {
+.Create-Survey {
   background-color: #edece8;
 }
 
@@ -198,7 +198,7 @@ button:focus, input[type=submit]:focus {
 VIEW PAGE
 --------------------------*/
 
-.View {
+.View-Surveys {
   background-color: #edece8;
 }
 
@@ -206,7 +206,7 @@ VIEW PAGE
 TAKE PAGE
 --------------------------*/
 
-.Take {
+.Take-Survey {
   background-color: #edece8;
 }
 
@@ -221,12 +221,21 @@ TAKE PAGE
 EDIT PAGE
 --------------------------*/
 
-.Edit {
+.Edit-Survey {
   background-color: #edece8;
 }
 
 /*--------------------------
-SINGLE ANSWER
+PREVIEW PAGE
+--------------------------*/
+
+.Preview-Survey {
+  background-color: #edece8;
+}
+
+
+/*--------------------------
+SINGLE ANSWER CREATION
 --------------------------*/
 
 .question-row {
@@ -242,7 +251,8 @@ SINGLE ANSWER
   width: 33vw;
 }
 
-ion-icon[name="radio-button-off-outline"] {
+ion-icon[name="radio-button-off-outline"],
+ion-icon[name="stop-outline"] {
   color: #000;
   font-size: 24px;
 }
