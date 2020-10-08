@@ -63,24 +63,23 @@ export default function CreateRadio({ radio, setRadio }) {
         <div>
           <form onSubmit={handleSave}>
             <div className="question-row">
-              <span className="question-number">1.</span>
-              <input type="text" id="question" name="question" placeholder="enter question text" required onChange={handleQuestionChange} />
+              <input type="text" className="question" placeholder="enter question text" required onChange={handleQuestionChange} />
             </div>
             <div className="answer-row">
               <ion-icon name="radio-button-off-outline"></ion-icon>
-              <input type="text" id="1" name="1" className="answer" placeholder="enter answer text" required onChange={(e) => { handleAnswerChange(e, 1) }} />
+              <input type="text" className="answer" placeholder="enter answer text" required onChange={(e) => { handleAnswerChange(e, 1) }} />
             </div>
             <div className="answer-row">
               <ion-icon name="radio-button-off-outline"></ion-icon>
-              <input type="text" id="q2" name="q2" className="answer" placeholder="enter answer text" required onChange={(e) => { handleAnswerChange(e, 2) }} />
+              <input type="text" className="answer" placeholder="enter answer text" required onChange={(e) => { handleAnswerChange(e, 2) }} />
             </div>
             <div className="answer-row">
               <ion-icon name="radio-button-off-outline"></ion-icon>
-              <input type="text" id="q3" name="q3" className="answer" placeholder="enter answer text" required onChange={(e) => { handleAnswerChange(e, 3) }} />
+              <input type="text" className="answer" placeholder="enter answer text" required onChange={(e) => { handleAnswerChange(e, 3) }} />
             </div>
             <div className="answer-row">
               <ion-icon name="radio-button-off-outline"></ion-icon>
-              <input type="text" id="q4" name="q4" className="answer" placeholder="enter answer text" required onChange={(e) => { handleAnswerChange(e, 4) }} />
+              <input type="text" className="answer" placeholder="enter answer text" required onChange={(e) => { handleAnswerChange(e, 4) }} />
             </div>
             <input type="submit" value="save question" className="btn center" />
           </form>

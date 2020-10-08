@@ -64,6 +64,31 @@ export default function PreviewSurvey() {
           </div>
         )}
 
+        {survey.textArea && 
+        survey.textArea.map(currentTextArea => 
+          <div key={currentTextArea._id}>
+            <p>{currentTextArea.question}</p>
+            <textarea rows="4" cols="50" id={currentTextArea._id} name={currentTextArea._id} className="answer"  />
+          </div>
+        )}
+
+        {survey.likert && 
+        survey.likert.map(currentLikert => 
+          <div key={currentLikert._id}>
+            <p>{currentLikert.question}</p>
+            <div>
+              <div className="range-flex">
+                <span className="input-label">Strongly<br />Disagree</span>
+                <span className="input-label">Disagree</span>
+                <span className="input-label">Neutral</span>
+                <span className="input-label">Agree</span>
+                <span className="input-label">Strongly<br />Agree</span>
+              </div>
+              <input type="range" name="rangeInput" min="1" max="5" />
+            </div>
+          </div>
+        )}
+
       </div>
 
     )

@@ -1,16 +1,15 @@
 import React from 'react'
 import axios from "axios"
 
-export default function CreateText({ text, setText }) {
+export default function CreateTextArea({ textArea, setTextArea }) {
   const handleQuestionChange = (e) => {
-    setText({ question: e.target.value })
+    setTextArea({ question: e.target.value })
   }
-
 
   const handleSave = (e) => {
     e.preventDefault()
-    axios.post("/surveys/update/text/" + window.location.href.split("/").pop(), {
-      text: text
+    axios.post("/surveys/update/textarea/" + window.location.href.split("/").pop(), {
+      textArea: textArea
     })
       .then(res => console.log(res.data))
       .catch((err) => {
@@ -20,7 +19,7 @@ export default function CreateText({ text, setText }) {
 
   return (
     <div>
-      <h2>Create Short Answer</h2>
+      <h2>Create Long Text</h2>
       <div className="center-flex">
         <div>
           <form onSubmit={handleSave}>
@@ -28,7 +27,7 @@ export default function CreateText({ text, setText }) {
               <input type="text" className="question" placeholder="enter question text" required onChange={handleQuestionChange} />
             </div>
             <div>
-              <input type="text" className="answer" placeholder="(user's answer will go here)" disabled />
+              <textarea rows="4" cols="40" placeholder="(user's answer will go here)" disabled />
             </div>
             <input type="submit" value="save question" className="btn center" />
           </form>

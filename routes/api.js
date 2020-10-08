@@ -64,6 +64,30 @@ router.route("/update/text/:id").post((req, res) => {
     .catch(err => res.status(400).json("Error: " + err))
 })
 
+router.route("/update/textarea/:id").post((req, res) => {
+  Survey.findById(req.params.id)
+    .then(survey => {
+      survey.textArea = [...survey.textArea, req.body.textArea]
+
+      survey.save()
+        .then(() => res.json("Survey updated!"))
+        .catch(err => res.status(400).json("Error: " + err))
+    })
+    .catch(err => res.status(400).json("Error: " + err))
+})
+
+router.route("/update/likert/:id").post((req, res) => {
+  Survey.findById(req.params.id)
+    .then(survey => {
+      survey.likert = [...survey.likert, req.body.likert]
+
+      survey.save()
+        .then(() => res.json("Survey updated!"))
+        .catch(err => res.status(400).json("Error: " + err))
+    })
+    .catch(err => res.status(400).json("Error: " + err))
+})
+
 router.route("/:id").delete((req, res) => {
   Survey.findByIdAndDelete(req.params.id)
     .then(() => res.json("Survey deleted."))

@@ -233,7 +233,6 @@ PREVIEW PAGE
   background-color: #edece8;
 }
 
-
 /*--------------------------
 SINGLE ANSWER CREATION
 --------------------------*/
@@ -247,12 +246,11 @@ SINGLE ANSWER CREATION
   font-size: 24px;
 }
 
-#question {
+.question {
   width: 33vw;
 }
 
-ion-icon[name="radio-button-off-outline"],
-ion-icon[name="stop-outline"] {
+ion-icon[name="radio-button-off-outline"], ion-icon[name="stop-outline"] {
   color: #000;
   font-size: 24px;
 }
@@ -265,4 +263,42 @@ ion-icon[name="stop-outline"] {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+/*--------------------------
+MULTIPLE ANSWER CREATION
+--------------------------*/
+
+/*--------------------------
+TEXT AREA CREATION
+--------------------------*/
+
+textarea {
+  display: block;
+  font-family: "Karla";
+  font-size: 22px;
+  background: white;
+  border: 1px solid white;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1rem 0.75rem 1rem;
+}
+
+textarea::placeholder {
+  color: lightgray;
+}
+
+
+/*--------------------------
+LIKERT CREATION
+--------------------------*/
+
+input[type="range"] {
+  width: 33vw;
+}
+
+.range-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 33vw;
 }
