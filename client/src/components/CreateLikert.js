@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from "axios"
+import  { store } from 'react-notifications-component'
 
 export default function CreateLikert({ likert, setLikert }) {
   const handleQuestionChange = (e) => {
@@ -11,7 +12,21 @@ export default function CreateLikert({ likert, setLikert }) {
     axios.post("/surveys/update/likert/" + window.location.href.split("/").pop(), {
       likert: likert
     })
-      .then(res => console.log(res.data))
+    .then(res => {
+      // console.log(res.data)
+      store.addNotification({
+        message: "Question added!",
+        type: "success",
+        insert: "top",
+        container: "top-right",
+        animationIn: ["animate__animated", "animate__fadeIn"],
+        animationOut: ["animate__animated", "animate__fadeOut"],
+        dismiss: {
+          duration: 2500
+        }
+      })
+    }
+    )
       .catch((err) => {
         console.log(err)
       })
@@ -36,7 +51,7 @@ export default function CreateLikert({ likert, setLikert }) {
               </div>
               <input type="range" name="rangeInput" min="1" max="5" disabled/>
             </div>
-            <input type="submit" value="save question" className="btn center" />
+            <input type="submit" value="add question" className="btn center" />
           </form>
         </div>
       </div>

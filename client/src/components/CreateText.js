@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from "axios"
+import  { store } from 'react-notifications-component'
 
 export default function CreateText({ text, setText }) {
   const handleQuestionChange = (e) => {
@@ -12,7 +13,21 @@ export default function CreateText({ text, setText }) {
     axios.post("/surveys/update/text/" + window.location.href.split("/").pop(), {
       text: text
     })
-      .then(res => console.log(res.data))
+    .then(res => {
+      // console.log(res.data)
+      store.addNotification({
+        message: "Question added!",
+        type: "success",
+        insert: "top",
+        container: "top-right",
+        animationIn: ["animate__animated", "animate__fadeIn"],
+        animationOut: ["animate__animated", "animate__fadeOut"],
+        dismiss: {
+          duration: 2500
+        }
+      })
+    }
+    )
       .catch((err) => {
         console.log(err)
       })
@@ -30,7 +45,7 @@ export default function CreateText({ text, setText }) {
             <div>
               <input type="text" className="answer" placeholder="(user's answer will go here)" disabled />
             </div>
-            <input type="submit" value="save question" className="btn center" />
+            <input type="submit" value="add question" className="btn center" />
           </form>
         </div>
       </div>

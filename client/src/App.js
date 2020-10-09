@@ -1,5 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route } from "react-router-dom"
+import ReactNotification from 'react-notifications-component'
+import './toast.css'
 import Nav from './components/Nav'
 import Hero from './components/Hero'
 import CreateSurvey from './components/CreateSurvey'
@@ -11,6 +13,7 @@ import EditSurvey from './components/EditSurvey'
 function App() {
   return (
     <BrowserRouter>
+    <ReactNotification />
       <Nav />
       <Route exact path={process.env.PUBLIC_URL + '/'} component={Hero} />
       <Route path={process.env.PUBLIC_URL + '/viewsurveys'} component={ViewSurveys} />

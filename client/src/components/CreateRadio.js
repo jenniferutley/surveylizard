@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from "axios"
+import  { store } from 'react-notifications-component'
 
 export default function CreateRadio({ radio, setRadio }) {
   const handleQuestionChange = (e) => {
@@ -50,7 +51,21 @@ export default function CreateRadio({ radio, setRadio }) {
     axios.post("/surveys/update/radio/" + window.location.href.split("/").pop(), {
       radio: radio
     })
-      .then(res => console.log(res.data))
+    .then(res => {
+      // console.log(res.data)
+      store.addNotification({
+        message: "Question added!",
+        type: "success",
+        insert: "top",
+        container: "top-right",
+        animationIn: ["animate__animated", "animate__fadeIn"],
+        animationOut: ["animate__animated", "animate__fadeOut"],
+        dismiss: {
+          duration: 2500
+        }
+      })
+    }
+    )
       .catch((err) => {
         console.log(err)
       })
@@ -63,25 +78,25 @@ export default function CreateRadio({ radio, setRadio }) {
         <div>
           <form onSubmit={handleSave}>
             <div className="question-row">
-              <input type="text" className="question" placeholder="enter question text" required onChange={handleQuestionChange} />
+              <input type="text" className="question" placeholder="enter question" required onChange={handleQuestionChange} />
             </div>
             <div className="answer-row">
               <ion-icon name="radio-button-off-outline"></ion-icon>
-              <input type="text" className="answer" placeholder="enter answer text" required onChange={(e) => { handleAnswerChange(e, 1) }} />
+              <input type="text" className="answer" placeholder="enter answer choice" required onChange={(e) => { handleAnswerChange(e, 1) }} />
             </div>
             <div className="answer-row">
               <ion-icon name="radio-button-off-outline"></ion-icon>
-              <input type="text" className="answer" placeholder="enter answer text" required onChange={(e) => { handleAnswerChange(e, 2) }} />
+              <input type="text" className="answer" placeholder="enter answer choice" required onChange={(e) => { handleAnswerChange(e, 2) }} />
             </div>
             <div className="answer-row">
               <ion-icon name="radio-button-off-outline"></ion-icon>
-              <input type="text" className="answer" placeholder="enter answer text" required onChange={(e) => { handleAnswerChange(e, 3) }} />
+              <input type="text" className="answer" placeholder="enter answer choice" required onChange={(e) => { handleAnswerChange(e, 3) }} />
             </div>
             <div className="answer-row">
               <ion-icon name="radio-button-off-outline"></ion-icon>
-              <input type="text" className="answer" placeholder="enter answer text" required onChange={(e) => { handleAnswerChange(e, 4) }} />
+              <input type="text" className="answer" placeholder="enter answer choice" required onChange={(e) => { handleAnswerChange(e, 4) }} />
             </div>
-            <input type="submit" value="save question" className="btn center" />
+            <input type="submit" value="add question" className="btn center" />
           </form>
         </div>
       </div>

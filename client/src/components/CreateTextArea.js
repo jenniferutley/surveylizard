@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from "axios"
+import { store } from 'react-notifications-component'
 
 export default function CreateTextArea({ textArea, setTextArea }) {
   const handleQuestionChange = (e) => {
@@ -11,7 +12,21 @@ export default function CreateTextArea({ textArea, setTextArea }) {
     axios.post("/surveys/update/textarea/" + window.location.href.split("/").pop(), {
       textArea: textArea
     })
-      .then(res => console.log(res.data))
+      .then(res => {
+        // console.log(res.data)
+        store.addNotification({
+          message: "Question added!",
+          type: "success",
+          insert: "top",
+          container: "top-right",
+          animationIn: ["animate__animated", "animate__fadeIn"],
+          animationOut: ["animate__animated", "animate__fadeOut"],
+          dismiss: {
+            duration: 2500
+          }
+        })
+      }
+      )
       .catch((err) => {
         console.log(err)
       })
@@ -29,7 +44,7 @@ export default function CreateTextArea({ textArea, setTextArea }) {
             <div>
               <textarea rows="4" cols="40" placeholder="(user's answer will go here)" disabled />
             </div>
-            <input type="submit" value="save question" className="btn center" />
+            <input type="submit" value="add question" className="btn center" />
           </form>
         </div>
       </div>

@@ -52,11 +52,6 @@ export default function EditSurvey() {
   return (
     <div className="Edit-Survey">
       <h2>Edit {surveys.name}</h2>
-      {/* <p>{surveys.description}</p>
-      <p>{JSON.stringify(surveys.radio)}</p>
-      <p>{JSON.stringify(surveys.checkbox)}</p>
-      <p>{JSON.stringify(surveys.text)}</p> */}
-
       <div className="button-group center-flex">
         <button type="button" className="button-group-start" title="add single answer item" onClick={handleCreateRadio}><ion-icon name="list-outline"></ion-icon></button>
         <button type="button" className="button-group-middle" title="add multiple answer item" onClick={handleCreateCheckbox}><ion-icon name="checkbox-outline"></ion-icon></button>

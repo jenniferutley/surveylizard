@@ -14,6 +14,7 @@ body {
   font-family: "Karla", sans-serif;
   font-weight: 400;
   font-size: 20px;
+  color: #252525;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url(./media/background.jpg);
   background-size: cover;
   background-position: center;
@@ -35,6 +36,12 @@ h2 {
   font-weight: 600;
   font-size: 34px;
   text-align: center;
+}
+
+h3 {
+  font-family: "Karla", sans-serif;
+  font-weight: 400;
+  font-size: 26px;
 }
 
 a {
@@ -65,8 +72,8 @@ NAVIGATION BAR
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.55);
   padding: 20px 0 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.55)
 }
 
 .Nav a {
@@ -85,12 +92,82 @@ NAVIGATION BAR
 HERO PAGE
 --------------------------*/
 
+.Hero {}
+
+
+/*--------------------------
+TAKE PAGE
+--------------------------*/
+
+.Take-Survey {
+  background-color: #edece8;
+  padding-top: 25px;
+  padding-bottom: 50px;
+}
+
+/*--------------------------
+VIEW PAGE
+--------------------------*/
+
+.View-Surveys {
+  background-color: #edece8;
+  padding-top: 25px;
+  padding-bottom: 50px;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #edece8;
+}
+
+table td, table th {
+  border-bottom: 1px solid #ddd;
+  padding-right: 20px;
+}
+
+table tr {
+  vertical-align: center;
+}
+
+tbody>tr>:nth-child(1) {
+  width: 15%;
+}
+
+tbody>tr>:nth-child(2) {
+  width: 15%;
+}
+
+tbody>tr>:nth-child(3) {
+  width: 22%;
+}
+
+tbody>tr>:nth-child(4) {
+  width: 22%;
+}
+
+table tr:hover {
+  background-color: #e2e2df;
+}
+
+.table-button {
+  margin-bottom: 20px;
+}
+
 /*--------------------------
 CREATE PAGE
 --------------------------*/
 
 .Create-Survey {
   background-color: #edece8;
+  padding-top: 25px;
+  padding-bottom: 50px;
 }
 
 input[type=text] {
@@ -195,34 +272,19 @@ button:focus, input[type=submit]:focus {
 }
 
 /*--------------------------
-VIEW PAGE
---------------------------*/
-
-.View-Surveys {
-  background-color: #edece8;
-}
-
-/*--------------------------
-TAKE PAGE
---------------------------*/
-
-.Take-Survey {
-  background-color: #edece8;
-}
-
-/* for some reason needs to be placed here and not higher up*/
-
-.center-flex {
-  display: flex;
-  justify-content: center;
-}
-
-/*--------------------------
 EDIT PAGE
 --------------------------*/
 
 .Edit-Survey {
   background-color: #edece8;
+  padding-top: 25px;
+  padding-bottom: 50px;
+}
+
+/* for some reason needs to be placed here and not higher up*/
+.center-flex {
+  display: flex;
+  justify-content: center;
 }
 
 /*--------------------------
@@ -231,10 +293,33 @@ PREVIEW PAGE
 
 .Preview-Survey {
   background-color: #edece8;
+  padding-top: 25px;
+  padding-bottom: 50px;
+}
+
+.preview-container {
+  margin: 0 33%;
+}
+
+.preview-question {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.preview-group {
+  margin-bottom: 40px;
+}
+
+.preview-input {
+  margin-left: 20px;
+}
+
+.preview-label {
+  margin-left: 10px;
 }
 
 /*--------------------------
-SINGLE ANSWER CREATION
+RADIO CREATION
 --------------------------*/
 
 .question-row {
@@ -248,15 +333,17 @@ SINGLE ANSWER CREATION
 
 .question {
   width: 33vw;
+  margin-bottom: 10px;
 }
 
 ion-icon[name="radio-button-off-outline"], ion-icon[name="stop-outline"] {
-  color: #000;
+  color: #252525;
   font-size: 24px;
 }
 
 .answer {
   width: 23vw;
+  margin-bottom: 10px;
 }
 
 .answer-row {
@@ -266,7 +353,18 @@ ion-icon[name="radio-button-off-outline"], ion-icon[name="stop-outline"] {
 }
 
 /*--------------------------
-MULTIPLE ANSWER CREATION
+CHECKBOX CREATION
+--------------------------*/
+
+.Create-Checkbox {
+  padding-top: 25px;
+  padding-bottom: 50px;
+  margin: 0 33%;
+  border: 1px solid #056796;
+}
+
+/*--------------------------
+TEXT CREATION
 --------------------------*/
 
 /*--------------------------
@@ -287,7 +385,6 @@ textarea::placeholder {
   color: lightgray;
 }
 
-
 /*--------------------------
 LIKERT CREATION
 --------------------------*/
@@ -301,4 +398,5 @@ input[type="range"] {
   justify-content: space-between;
   align-items: center;
   width: 33vw;
+  margin-top: 20px;
 }
