@@ -4,9 +4,6 @@ import axios from "axios"
 export default function PreviewSurvey() {
   const [survey, setSurvey] = useState({})
 
-  //in view, surveys is an array
-  //in take, survey is an object
-
   useEffect(() => {
     axios.get("/surveys/" + window.location.href.split("/").pop())
       .then(res => {
@@ -15,11 +12,11 @@ export default function PreviewSurvey() {
       .catch((err) => {
         console.log(err)
       })
-  }, [])  
+  }, [])
 
   return (
     <div className="Preview-Survey">
-    <h2>{survey.name}</h2>
+      <h2>{survey.name}</h2>
       <div className="preview-container">
         {survey.radio &&
           survey.radio.map(currentRadio =>
@@ -27,15 +24,27 @@ export default function PreviewSurvey() {
               <p className="preview-question">{currentRadio.question}</p>
               <input className="preview-input" type="radio" id={currentRadio.a1[0]._id} name={currentRadio._id} />
               <label className="preview-label" htmlFor={currentRadio.a1[0]._id}>{currentRadio.a1[0].content}</label><br />
-
               <input className="preview-input" type="radio" id={currentRadio.a2[0]._id} name={currentRadio._id} />
               <label className="preview-label" htmlFor={currentRadio.a2[0]._id}>{currentRadio.a2[0].content}</label><br />
-
-              <input className="preview-input" type="radio" id={currentRadio.a3[0]._id} name={currentRadio._id} />
-              <label className="preview-label" htmlFor={currentRadio.a3[0]._id}>{currentRadio.a3[0].content}</label><br />
-
-              <input className="preview-input" type="radio" id={currentRadio.a4[0]._id} name={currentRadio._id} />
-              <label className="preview-label" htmlFor={currentRadio.a4[0]._id}>{currentRadio.a4[0].content}</label><br />
+              {/* check for third through fifth answer choices */}
+              {currentRadio.a3[0] &&
+                <div>
+                  <input className="preview-input" type="radio" id={currentRadio.a3[0]._id} name={currentRadio._id} />
+                  <label className="preview-label" htmlFor={currentRadio.a3[0]._id}>{currentRadio.a3[0].content}</label><br />
+                </div>
+              }
+              {currentRadio.a4[0] &&
+                <div>
+                  <input className="preview-input" type="radio" id={currentRadio.a4[0]._id} name={currentRadio._id} />
+                  <label className="preview-label" htmlFor={currentRadio.a4[0]._id}>{currentRadio.a4[0].content}</label><br />
+                </div>
+              }
+              {currentRadio.a5[0] &&
+                <div>
+                  <input className="preview-input" type="radio" id={currentRadio.a5[0]._id} name={currentRadio._id} />
+                  <label className="preview-label" htmlFor={currentRadio.a5[0]._id}>{currentRadio.a5[0].content}</label><br />
+                </div>
+              }
             </div>
           )}
 
@@ -45,15 +54,27 @@ export default function PreviewSurvey() {
               <p className="preview-question">{currentCheckbox.question}</p>
               <input className="preview-input" type="checkbox" id={currentCheckbox.a1[0]._id} name={currentCheckbox._id} />
               <label className="preview-label" htmlFor={currentCheckbox.a1[0]._id}>{currentCheckbox.a1[0].content}</label><br />
-
               <input className="preview-input" type="checkbox" id={currentCheckbox.a2[0]._id} name={currentCheckbox._id} />
               <label className="preview-label" htmlFor={currentCheckbox.a2[0]._id}>{currentCheckbox.a2[0].content}</label><br />
-
-              <input className="preview-input" type="checkbox" id={currentCheckbox.a3[0]._id} name={currentCheckbox._id} />
-              <label className="preview-label" htmlFor={currentCheckbox.a3[0]._id}>{currentCheckbox.a3[0].content}</label><br />
-
-              <input className="preview-input" type="checkbox" id={currentCheckbox.a4[0]._id} name={currentCheckbox._id} />
-              <label className="preview-label" htmlFor={currentCheckbox.a4[0]._id}>{currentCheckbox.a4[0].content}</label><br />
+              {/* check for third through fifth answer choices */}
+              {currentCheckbox.a3[0] &&
+                <div>
+                  <input className="preview-input" type="checkbox" id={currentCheckbox.a3[0]._id} name={currentCheckbox._id} />
+                  <label className="preview-label" htmlFor={currentCheckbox.a3[0]._id}>{currentCheckbox.a3[0].content}</label><br />
+                </div>
+              }
+              {currentCheckbox.a4[0] &&
+                <div>
+                  <input className="preview-input" type="checkbox" id={currentCheckbox.a4[0]._id} name={currentCheckbox._id} />
+                  <label className="preview-label" htmlFor={currentCheckbox.a4[0]._id}>{currentCheckbox.a4[0].content}</label><br />
+                </div>
+              }
+              {currentCheckbox.a5[0] &&
+                <div>
+                  <input className="preview-input" type="checkbox" id={currentCheckbox.a5[0]._id} name={currentCheckbox._id} />
+                  <label className="preview-label" htmlFor={currentCheckbox.a5[0]._id}>{currentCheckbox.a5[0].content}</label><br />
+                </div>
+              }
             </div>
           )}
 

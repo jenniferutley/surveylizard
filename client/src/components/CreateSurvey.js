@@ -75,7 +75,7 @@ export default function CreateSurvey() {
               <input type="text" id="description" name="description" onChange={handleDescriptionChange} />
             </div>
           </div>
-          <input type="submit" value="create survey" className="btn center" />
+          <input type="submit" value="create survey" className="btn center create-button" />
         </form>
       </div>
     </div>

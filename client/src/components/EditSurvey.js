@@ -31,27 +31,49 @@ export default function EditSurvey() {
 
   const handleCreateRadio = (e) => {
     setShowCreateRadio(!showCreateRadio)
+    setShowCreateCheckbox(false)
+    setShowCreateText(false)
+    setShowCreateTextArea(false)
+    setShowCreateLikert(false)
   }
 
   const handleCreateCheckbox = (e) => {
     setShowCreateCheckbox(!showCreateCheckbox)
+    setShowCreateRadio(false)
+    setShowCreateText(false)
+    setShowCreateTextArea(false)
+    setShowCreateLikert(false)
   }
 
   const handleCreateText = (e) => {
     setShowCreateText(!showCreateText)
+    setShowCreateRadio(false)
+    setShowCreateCheckbox(false)
+    setShowCreateTextArea(false)
+    setShowCreateLikert(false)
+    
   }
 
   const handleCreateTextArea = (e) => {
     setShowCreateTextArea(!showCreateTextArea)
+    setShowCreateRadio(false)
+    setShowCreateCheckbox(false)
+    setShowCreateText(false)
+    setShowCreateLikert(false)
   }
 
   const handleCreateLikert = (e) => {
     setShowCreateLikert(!showCreateLikert)
+    setShowCreateRadio(false)
+    setShowCreateCheckbox(false)
+    setShowCreateText(false)
+    setShowCreateTextArea(false)
   }
 
   return (
     <div className="Edit-Survey">
       <h2>Edit {surveys.name}</h2>
+      <p className="instructions">Please use one of the buttons below to add a new question.</p>
       <div className="button-group center-flex">
         <button type="button" className="button-group-start" title="add single answer item" onClick={handleCreateRadio}><ion-icon name="list-outline"></ion-icon></button>
         <button type="button" className="button-group-middle" title="add multiple answer item" onClick={handleCreateCheckbox}><ion-icon name="checkbox-outline"></ion-icon></button>

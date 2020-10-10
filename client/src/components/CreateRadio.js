@@ -44,6 +44,15 @@ export default function CreateRadio({ radio, setRadio }) {
         }
       })
     }
+    if (a === 5) {
+      setRadio({
+        ...radio,
+        a5: {
+          order: a,
+          content: e.target.value
+        }
+      })
+    }
   }
 
   const handleSave = (e) => {
@@ -72,8 +81,9 @@ export default function CreateRadio({ radio, setRadio }) {
   }
 
   return (
-    <div>
-      <h2>Create Single Answer</h2>
+    <div className="Create-Radio">
+      <h3>Create Single Answer</h3>
+      <p>This question type uses radio buttons to allow the user to select only one answer. Please provide between two and five answer choices.</p>
       <div className="center-flex">
         <div>
           <form onSubmit={handleSave}>
@@ -81,21 +91,20 @@ export default function CreateRadio({ radio, setRadio }) {
               <input type="text" className="question" placeholder="enter question" required onChange={handleQuestionChange} />
             </div>
             <div className="answer-row">
-              <ion-icon name="radio-button-off-outline"></ion-icon>
               <input type="text" className="answer" placeholder="enter answer choice" required onChange={(e) => { handleAnswerChange(e, 1) }} />
             </div>
             <div className="answer-row">
-              <ion-icon name="radio-button-off-outline"></ion-icon>
               <input type="text" className="answer" placeholder="enter answer choice" required onChange={(e) => { handleAnswerChange(e, 2) }} />
             </div>
             <div className="answer-row">
-              <ion-icon name="radio-button-off-outline"></ion-icon>
-              <input type="text" className="answer" placeholder="enter answer choice" required onChange={(e) => { handleAnswerChange(e, 3) }} />
+              <input type="text" className="answer" placeholder="enter answer choice"  onChange={(e) => { handleAnswerChange(e, 3) }} />
             </div>
             <div className="answer-row">
-              <ion-icon name="radio-button-off-outline"></ion-icon>
-              <input type="text" className="answer" placeholder="enter answer choice" required onChange={(e) => { handleAnswerChange(e, 4) }} />
+              <input type="text" className="answer" placeholder="enter answer choice"  onChange={(e) => { handleAnswerChange(e, 4) }} />              
             </div>
+            <div className="answer-row">
+              <input type="text" className="answer" placeholder="enter answer choice"  onChange={(e) => { handleAnswerChange(e, 5) }} />              
+            </div>           
             <input type="submit" value="add question" className="btn center" />
           </form>
         </div>

@@ -44,6 +44,15 @@ export default function CreateCheckbox({ checkbox, setCheckbox }) {
         }
       })
     }
+    if (a === 5) {
+      setCheckbox({
+        ...checkbox,
+        a5: {
+          order: a,
+          content: e.target.value
+        }
+      })
+    }
   }
 
   const handleSave = (e) => {
@@ -82,20 +91,19 @@ export default function CreateCheckbox({ checkbox, setCheckbox }) {
               <input type="text" className="question" placeholder="enter question" required onChange={handleQuestionChange} />
             </div>
             <div className="answer-row">
-              {/* <ion-icon name="stop-outline"></ion-icon> */}
-              <input type="text" className="answer" placeholder="enter first answer choice" required onChange={(e) => { handleAnswerChange(e, 1) }} />
+              <input type="text" className="answer" placeholder="enter answer choice" required onChange={(e) => { handleAnswerChange(e, 1) }} />
             </div>
             <div className="answer-row">
-              {/* <ion-icon name="stop-outline"></ion-icon> */}
-              <input type="text" className="answer" placeholder="enter second answer choice" required onChange={(e) => { handleAnswerChange(e, 2) }} />
+              <input type="text" className="answer" placeholder="enter answer choice" required onChange={(e) => { handleAnswerChange(e, 2) }} />
             </div>
             <div className="answer-row">
-              {/* <ion-icon name="stop-outline"></ion-icon> */}
-              <input type="text" className="answer" placeholder="enter third answer choice" required onChange={(e) => { handleAnswerChange(e, 3) }} />
+              <input type="text" className="answer" placeholder="enter answer choice" onChange={(e) => { handleAnswerChange(e, 3) }} />
             </div>
             <div className="answer-row">
-              {/* <ion-icon name="stop-outline"></ion-icon> */}
-              <input type="text" className="answer" placeholder="enter fourth answer choice" required onChange={(e) => { handleAnswerChange(e, 4) }} />
+              <input type="text" className="answer" placeholder="enter answer choice" onChange={(e) => { handleAnswerChange(e, 4) }} />
+            </div>
+            <div className="answer-row">
+              <input type="text" className="answer" placeholder="enter answer choice" onChange={(e) => { handleAnswerChange(e, 5) }} />
             </div>
             <input type="submit" value="add question" className="btn center" />
           </form>

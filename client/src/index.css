@@ -89,14 +89,11 @@ NAVIGATION BAR
 }
 
 /*--------------------------
-HERO PAGE
+HERO
 --------------------------*/
 
-.Hero {}
-
-
 /*--------------------------
-TAKE PAGE
+TAKE SURVEY
 --------------------------*/
 
 .Take-Survey {
@@ -106,7 +103,7 @@ TAKE PAGE
 }
 
 /*--------------------------
-VIEW PAGE
+VIEW SURVEYS
 --------------------------*/
 
 .View-Surveys {
@@ -157,11 +154,13 @@ table tr:hover {
 }
 
 .table-button {
+  margin-top: 20px;
   margin-bottom: 20px;
+  
 }
 
 /*--------------------------
-CREATE PAGE
+CREATE SURVEY
 --------------------------*/
 
 .Create-Survey {
@@ -222,7 +221,7 @@ button, input[type=submit] {
   cursor: pointer;
   border-radius: 0.25rem;
   padding: 15px 25px 15px 25px;
-  margin-top: 25px;
+  /* margin-top: 25px; */
   font-size: 13px;
   text-transform: uppercase;
   font-family: "Karla", sans-serif;
@@ -235,6 +234,10 @@ button, input[type=submit] {
 
 .rounded {
   border-radius: 1.8125rem;
+}
+
+.create-button {
+  margin-top: 25px;
 }
 
 button:hover, button:active, input[type=submit]:hover, input[type="submit"]:active {
@@ -281,6 +284,10 @@ EDIT PAGE
   padding-bottom: 50px;
 }
 
+.instructions {
+  text-align: center;
+}
+
 /* for some reason needs to be placed here and not higher up*/
 .center-flex {
   display: flex;
@@ -322,6 +329,17 @@ PREVIEW PAGE
 RADIO CREATION
 --------------------------*/
 
+.Create-Radio,
+.Create-Checkbox,
+.Create-Text,
+.Create-TextArea,
+.Create-Likert {
+  padding-top: 25px;
+  padding-bottom: 50px;
+  margin: 0 33%;
+  /* border: 1px solid #056796; */
+}
+
 .question-row {
   display: flex;
   align-items: center;
@@ -336,11 +354,6 @@ RADIO CREATION
   margin-bottom: 10px;
 }
 
-ion-icon[name="radio-button-off-outline"], ion-icon[name="stop-outline"] {
-  color: #252525;
-  font-size: 24px;
-}
-
 .answer {
   width: 23vw;
   margin-bottom: 10px;
@@ -352,16 +365,18 @@ ion-icon[name="radio-button-off-outline"], ion-icon[name="stop-outline"] {
   align-items: center;
 }
 
+.add-answer-choice {
+  /* margin-bottom: 10px;
+  margin-left: 20px; */
+}
+
+ion-icon[name="add-outline"] {
+  font-size: 18px;
+}
+
 /*--------------------------
 CHECKBOX CREATION
 --------------------------*/
-
-.Create-Checkbox {
-  padding-top: 25px;
-  padding-bottom: 50px;
-  margin: 0 33%;
-  border: 1px solid #056796;
-}
 
 /*--------------------------
 TEXT CREATION

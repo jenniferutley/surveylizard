@@ -1,3 +1,4 @@
+  
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
@@ -13,12 +14,7 @@ const itemSchema = new Schema({
   a2: [answerSchema],
   a3: [answerSchema],
   a4: [answerSchema],
-  a5: [answerSchema],
-  a6: [answerSchema],
-  a7: [answerSchema],
-  a8: [answerSchema],
-  a9: [answerSchema],
-  a10: [answerSchema]
+  a5: [answerSchema]
 }, {
   timestamps: true,
 })

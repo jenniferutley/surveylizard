@@ -34,7 +34,7 @@ export default function CreateText({ text, setText }) {
   }
 
   return (
-    <div>
+    <div className="Create-Text">
       <h2>Create Short Answer</h2>
       <div className="center-flex">
         <div>

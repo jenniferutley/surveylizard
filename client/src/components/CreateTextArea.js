@@ -33,7 +33,7 @@ export default function CreateTextArea({ textArea, setTextArea }) {
   }
 
   return (
-    <div>
+    <div className="Create-TextArea">
       <h2>Create Long Text</h2>
       <div className="center-flex">
         <div>

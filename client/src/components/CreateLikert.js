@@ -33,7 +33,7 @@ export default function CreateLikert({ likert, setLikert }) {
   }
 
   return (
-    <div>
+    <div className="Create-Likert">
       <h2>Create Likert</h2>
       <div className="center-flex">
         <div>

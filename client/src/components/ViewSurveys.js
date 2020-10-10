@@ -67,6 +67,7 @@ export default function ViewSurveys() {
             <td>{moment(currentSurvey.createdAt).format("L LTS")}</td>
             <td>{moment(currentSurvey.updatedAt).format("L LTS")}</td>
             <td><Link to={process.env.PUBLIC_URL + '/previewsurvey/'+currentSurvey._id}><button className="table-button">Preview</button></Link></td>
+            <td><Link to={process.env.PUBLIC_URL + '/takesurvey/'+currentSurvey._id}><button className="table-button">Take</button></Link></td>
             <td><Link to={process.env.PUBLIC_URL + '/editsurvey/'+currentSurvey._id}><button className="table-button">Edit</button></Link></td>
             <td><button className="table-button" onClick={() => {handleDelete(currentSurvey._id)}}>Delete</button></td>            
           </tr>)}
