@@ -305,8 +305,7 @@ PREVIEW PAGE
 .Preview-Survey {
   background-color: rgba(237,236,232, 0.85);
   padding-top: 25px;
-  padding-bottom: 50px;
-  
+  padding-bottom: 50px;  
 }
 
 .preview-container {
@@ -402,6 +401,7 @@ textarea {
   border: 1px solid white;
   border-radius: 0.25rem;
   padding: 0.75rem 1rem 0.75rem 1rem;
+  margin-bottom: 10px;
 }
 
 textarea::placeholder {

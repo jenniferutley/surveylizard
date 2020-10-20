@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link} from "react-router-dom"
-import BackgroundImage from "../media/background.jpg"
 
 export default function Hero() {
   
