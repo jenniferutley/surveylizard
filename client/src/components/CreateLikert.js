@@ -34,12 +34,13 @@ export default function CreateLikert({ likert, setLikert }) {
 
   return (
     <div className="Create-Likert">
-      <h2>Create Likert</h2>
+      <h3 className="create-title">Likert</h3>
+      <p className="create-instructions">This question type provides the user with a slider to select where their response lies on a five-point scale.</p>
       <div className="center-flex">
         <div>
           <form onSubmit={handleSave}>
             <div className="question-row">
-              <input type="text" className="question" placeholder="enter question text" required onChange={handleQuestionChange} />
+              <input type="text" className="question" placeholder="enter question" required onChange={handleQuestionChange} />
             </div>
             <div>
               <div className="range-flex">

@@ -35,12 +35,13 @@ export default function CreateText({ text, setText }) {
 
   return (
     <div className="Create-Text">
-      <h2>Create Short Answer</h2>
+      <h3 className="create-title">Short Answer</h3>
+      <p className="create-instructions">This question type allows the user to respond with a word or short phrase.</p>
       <div className="center-flex">
         <div>
           <form onSubmit={handleSave}>
             <div className="question-row">
-              <input type="text" className="question" placeholder="enter question text" required onChange={handleQuestionChange} />
+              <input type="text" className="question" placeholder="enter question" required onChange={handleQuestionChange} />
             </div>
             <div>
               <input type="text" className="answer" placeholder="(user's answer will go here)" disabled />

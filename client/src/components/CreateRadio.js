@@ -82,8 +82,8 @@ export default function CreateRadio({ radio, setRadio }) {
 
   return (
     <div className="Create-Radio">
-      <h3>Create Single Answer</h3>
-      <p>This question type uses radio buttons to allow the user to select only one answer. Please provide between two and five answer choices.</p>
+      <h3 className="create-title">Single Answer</h3>
+      <p className="create-instructions">This question type uses radio buttons to restrict the user's response to one choice. Please provide two to five answer choices.</p>
       <div className="center-flex">
         <div>
           <form onSubmit={handleSave}>

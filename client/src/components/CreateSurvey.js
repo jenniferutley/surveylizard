@@ -55,9 +55,6 @@ export default function CreateSurvey() {
     // window.location = "/viewsurveys"
   }
 
-  // document.body.style.backgroundColor = "#edece8"
-  // document.body.style.backgroundImage = "none"
-
   return (
     <div className="Create-Survey">
       <h2>Create a New Survey</h2>

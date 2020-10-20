@@ -82,8 +82,8 @@ export default function CreateCheckbox({ checkbox, setCheckbox }) {
 
   return (
     <div className="Create-Checkbox">
-      <h3>Create Multiple Answer</h3>
-      <p>This question type uses checkboxes to allow the user to select multiple choices at once.</p>
+      <h3 className="create-title">Multiple Answer</h3>
+      <p className="create-instructions">This question type uses checkboxes to allow the user to select multiple choices at once. Please provide two to five answer choices.</p>
       <div className="center-flex">
         <div>
           <form onSubmit={handleSave}>

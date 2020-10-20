@@ -34,12 +34,13 @@ export default function CreateTextArea({ textArea, setTextArea }) {
 
   return (
     <div className="Create-TextArea">
-      <h2>Create Long Text</h2>
+      <h3 className="create-title">Long Text</h3>
+      <p className="create-instructions">This question type allows the user to respond with one or more sentences. </p>
       <div className="center-flex">
         <div>
           <form onSubmit={handleSave}>
             <div className="question-row">
-              <input type="text" className="question" placeholder="enter question text" required onChange={handleQuestionChange} />
+              <input type="text" className="question" placeholder="enter question" required onChange={handleQuestionChange} />
             </div>
             <div>
               <textarea rows="4" cols="40" placeholder="(user's answer will go here)" disabled />

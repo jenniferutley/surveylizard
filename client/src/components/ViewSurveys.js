@@ -40,12 +40,9 @@ export default function ViewSurveys() {
     )
   }
 
-  // document.body.style.backgroundColor = "#edece8"
-  // document.body.style.backgroundImage = "none"
-
   return (
     <div className="View-Surveys">
-      <h2>View Surveys</h2>
+      <h2>Manage Surveys</h2>
       <br />
       <br />
       <table>
@@ -67,7 +64,7 @@ export default function ViewSurveys() {
             <td>{moment(currentSurvey.createdAt).format("L LTS")}</td>
             <td>{moment(currentSurvey.updatedAt).format("L LTS")}</td>
             <td><Link to={process.env.PUBLIC_URL + '/previewsurvey/'+currentSurvey._id}><button className="table-button">Preview</button></Link></td>
-            <td><Link to={process.env.PUBLIC_URL + '/takesurvey/'+currentSurvey._id}><button className="table-button">Take</button></Link></td>
+            {/* <td><Link to={process.env.PUBLIC_URL + '/takesurvey/'+currentSurvey._id}><button className="table-button">Take</button></Link></td> */}
             <td><Link to={process.env.PUBLIC_URL + '/editsurvey/'+currentSurvey._id}><button className="table-button">Edit</button></Link></td>
             <td><button className="table-button" onClick={() => {handleDelete(currentSurvey._id)}}>Delete</button></td>            
           </tr>)}
